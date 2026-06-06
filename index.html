@@ -32,11 +32,14 @@
                 <img src="logo.png" alt="La Cima Radio Logo" class="logo">
                 <h2>103.7 FM | Berlín, Usulután (YSBE)</h2>
 
-                <div class="reproductor">
-                    <h3>Escúchanos En Vivo</h3>
-                    <!-- Reproductor oficial de MyRadioStream compatible con GitHub Pages -->
-                    <script src="//myradiostream.com/embed/lacimaradio"></script>
-                </div>
+               <div class="reproductor">
+    <h3>Escúchanos En Vivo</h3>
+    <audio controls>
+        <!-- Aquí va tu enlace de Cloudflare Workers -->
+        <source src="https://broken-haze-7e33lacima-radio.lacimaradioberlin.workers.dev" type="audio/mpeg">
+        Tu navegador no soporta este reproductor de audio.
+            </audio>
+            </div>
             </div>
             <!-- BLOQUE DERECHO: CHAT Y RELOJ -->
             <div class="bloque-chat contenedor-principal">
