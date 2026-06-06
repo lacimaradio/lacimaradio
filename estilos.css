@@ -1,0 +1,213 @@
+/* Configuración General y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-image: url('logo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    backdrop-filter: blur(14px); 
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.capa-fondo {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(15, 23, 42, 0.85) 0%, rgba(6, 10, 18, 0.98) 100%);
+    z-index: 1;
+}
+
+/* Envoltorio General */
+.wrapper-web {
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    max-width: 1000px;
+    margin: 90px auto 20px auto;
+}
+
+/* Título Adaptable */
+.titulo-externo-hueco {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff; 
+    text-shadow: -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000, 0px 8px 20px rgba(0,0,0,0.9);
+}
+
+/* Sistema de Columnas */
+.columnas-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos partes exactamente iguales */
+    gap: 25px;
+    align-items: start;
+}
+
+/* Cajas Base Estilo Vidrio Opaco */
+.contenedor-principal {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 35px 25px;
+    border-radius: 18px; 
+    border: 1px solid rgba(241, 90, 36, 0.2); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bloque-radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Forzar a igualar la altura del chat */
+}
+
+.bloque-chat {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Forzar a igualar la altura de la radio */
+}
+
+/* Ajustes del Logotipo */
+.logo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.7);
+}
+
+h2 {
+    font-size: 1.05rem;
+    color: #ffcc00; 
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Reproductor */
+.reproductor {
+    background: #131b26;
+    padding: 20px;
+    border-radius: 14px;
+}
+.reproductor h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+}
+audio { width: 100%; }
+
+/* Interfaz del Chat */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+.chat-header h3 { font-size: 1.1rem; color: #fff; }
+
+/* Reloj Dinámico */
+.reloj {
+    font-size: 0.9rem;
+    color: #ffcc00;
+    background: rgba(0,0,0,0.4);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.chat-contenedor-iframe {
+    width: 100%;
+    height: 380px; /* Dimensión fija para mantener la simetría horizontal perfecta */
+    background: #0b0f17;
+    border-radius: 14px; 
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* 🌟 ESTILOS DEL NUEVO PIE DE PÁGINA EXTERNO */
+.pie-pagina-externo {
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.redes-sociales-pie {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 15px;
+}
+
+.enlace-red {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.enlace-red:hover {
+    transform: scale(1.18);
+}
+
+/* Logotipos reales e independientes */
+.svg-logo-real {
+    width: 38px;
+    height: 38px;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5));
+}
+
+.copyright-texto {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* Esquina Superior */
+.esquina-derecha {
+    position: absolute;
+    top: 15px; right: 15px;
+    display: flex; align-items: center; gap: 10px; z-index: 3;
+}
+.boton-al-aire {
+    display: inline-flex; align-items: center;
+    background-color: rgba(255, 0, 0, 0.25); color: #ff3333;
+    border: 1.5px solid #ff3333; padding: 4px 10px;
+    font-size: 0.7rem; font-weight: bold; border-radius: 20px;
+}
+.punto-rojo {
+    width: 6px; height: 6px; background-color: #ff3333;
+    border-radius: 50%; margin-right: 5px; animation: parpadeo 1.5s infinite;
+}
+@keyframes parpadeo {
+    0%, 100% { opacity: 0.3; } 50% { opacity: 1; }
+}
+.logo-esquina { width: 50px; height: 50px; object-fit: contain; border-radius: 6px; }
+
+/* 📱 CORRECCIÓN PARA CELULARES: Desactiva las dos columnas para que no se amontone en pantallas móviles */
+@media (max-width: 768px) {
+    .columnas-layout {
+        grid-template-columns: 1fr; /* Se vuelve una sola columna vertical */
+        gap: 20px;
+    }
+    .bloque-radio, .bloque-chat {
+        height: auto;
+    }
+    .chat-contenedor-iframe {
+        height: 420px; /* Más espacio cómodo para chatear en celular */
+    }
+}
